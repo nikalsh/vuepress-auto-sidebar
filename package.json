@@ -1,0 +1,11 @@
+{
+  "name": "vuepress-auto-sidebar",
+  "version": "1.0.0",
+  "description": "Simple sidebar automating tool for Vuepress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niklas Helander",
+  "license": "MIT"
+}
