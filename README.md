@@ -41,4 +41,4 @@ Would result in
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
 
-This project uses the following license: [MIT](README.md).
+This project uses the following license: [MIT](LICENSE).
