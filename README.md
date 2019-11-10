@@ -26,11 +26,11 @@ module.exports = {
         sidebar: sidebar.getSidebar()
     ...
 ```
-![img](images/dir.png)
+![img](https://github.com/nikalsh/vuepress-auto-sidebar/blob/master/images/dir.png?raw=true)
 
 Would result in
 
-![demo](images/demo.png)
+![demo](https://raw.githubusercontent.com/nikalsh/vuepress-auto-sidebar/master/images/demo.png)
 
 
 
