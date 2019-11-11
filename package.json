@@ -1,6 +1,6 @@
 {
   "name": "vuepress-auto-sidebar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple sidebar automating tool for Vuepress",
   "main": "index.js",
   "scripts": {
