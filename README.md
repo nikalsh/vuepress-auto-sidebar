@@ -51,7 +51,7 @@ Would result in
 
 ## Changelog
 
-## 1.0.8 - 2020-06-07
+## v1.0.8 - 2020-06-07
 #### Added
 - CLI Support
 - Rewrites config.js
@@ -158,7 +158,7 @@ Example scripts if you don't install it globally:
 ```
 
 
-## 1.0.5 - 2020-06-07
+## v1.0.5 - 2020-06-07
 #### Added
 - Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar with sidebar.getSidebar(). 
 
