@@ -12,7 +12,7 @@ Only supports .md files named README.
 
 ## npm
 
-```
+```bash
 npm install vuepress-auto-sidebar
 ```
 
@@ -31,7 +31,7 @@ module.exports = {
 or with CLI:
 
 config.js
-```
+```javascript
 module.exports = {
     ...
     themeConfig: {
@@ -39,7 +39,7 @@ module.exports = {
     ...
 ```
 Then run:
-```
+```bash
 cd vp
 vuepress-auto-sidebar
 ```
@@ -63,7 +63,7 @@ This lets you see exactly what is generated as well as letting you further custo
 The following examples assumes you've installed it globally.
 
 config.js:
-```
+```javascript
 module.exports = {
     themeConfig: {
         "sidebar": []
@@ -72,13 +72,13 @@ module.exports = {
 ```
 
 Run vuepress-auto-sidebar:
-```
+```bash
 cd vp/path
 vuepress-auto-sidebar
 ```
 
 config.js result:
-```
+```javascript
 module.exports = {
     themeConfig: {
     "sidebar": [
@@ -106,7 +106,7 @@ module.exports = {
 ```
 
 CLI also supports base-option.
-```
+```javascript
 module.exports = {
     themeConfig: {
     "base": "/base/path/",
@@ -116,12 +116,12 @@ module.exports = {
 ```
 
 Run vuepress-auto-sidebar:
-```
+```bash
 vuepress-auto-sidebar
 ```
 
 config.js result:
-```
+```javascript
 module.exports = {
     themeConfig: {
     "base": "/base/path/",
@@ -150,7 +150,7 @@ module.exports = {
 ```
 
 Example scripts if you don't install it globally:
-```
+```javascript
 "scripts": {
     "sidebar": cd vp/path && vuepress-auto-sidebar",
     "dev": "cd vp/path && vuepress-auto-sidebar && vuepress dev"
