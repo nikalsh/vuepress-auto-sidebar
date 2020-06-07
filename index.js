@@ -14,7 +14,7 @@ const sidebar = {
 
         const sidebarRoot = [{
             title: HomeTitle,
-            path: !!this.baseOption ? this.baseOption + '/' : '/',
+            path: !!this.baseOption ? this.baseOption : '/',
             collapsable: true,
             children: []
         }];
