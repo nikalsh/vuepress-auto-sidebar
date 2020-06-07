@@ -50,9 +50,6 @@ Would result in
 ![demo](https://raw.githubusercontent.com/nikalsh/vuepress-auto-sidebar/master/images/demo.png)
 
 ## Changelog
-## 1.0.5 - 2020-06-07
-#### Added
-- Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar with sidebar.getSidebar(). 
 
 ## 1.0.8 - 2020-06-07
 #### Added
@@ -62,6 +59,9 @@ Would result in
 You can now generate the sidebar with a CLI command, which will rewrite the config.js with the actual sidebar.
 
 This lets you see exactly what is generated as well as letting you further customize it.
+
+The following examples assumes you've installed it globally.
+
 config.js:
 ```
 module.exports = {
@@ -149,13 +149,20 @@ module.exports = {
 }
 ```
 
-Example scripts:
+Example scripts if you don't install it globally:
 ```
 "scripts": {
     "sidebar": cd vp/path && vuepress-auto-sidebar",
     "dev": "cd vp/path && vuepress-auto-sidebar && vuepress dev"
 }
 ```
+
+
+## 1.0.5 - 2020-06-07
+#### Added
+- Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar with sidebar.getSidebar(). 
+
+
 
 ## Contact
 If you want to contact me you can reach me at contact@nikals.se
