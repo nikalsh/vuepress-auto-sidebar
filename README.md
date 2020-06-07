@@ -10,13 +10,13 @@ If a base-option was supplied in config.js, it will instead look in the specifie
 
 Only supports .md files named README. 
 
-## npm
+## Install
 
 ```bash
 npm install vuepress-auto-sidebar
 ```
 
-## usage
+## Usage
 config.js
 ```javascript
 const sidebar = require('vuepress-auto-sidebar')
@@ -28,7 +28,7 @@ module.exports = {
     ...
 ```
 
-or with CLI:
+## or CLI:
 
 config.js
 ```javascript
