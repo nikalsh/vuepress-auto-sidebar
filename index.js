@@ -3,22 +3,26 @@ const path = require('path');
 
 const sidebar = {
 
-    getSidebar(rootTitle = 'Home') {
-        const root = getRootDir();
+    baseOption: undefined,
+
+    getSidebar(HomeTitle = "Home") {
+
+        const root = getRoot();
 
         const dir = fs.readdirSync(root)
             .filter(file => file !== '.vuepress' && !file.includes('.md'));
 
         const sidebarRoot = [{
-            title: rootTitle,
-            path: '/',
+            title: HomeTitle,
+            path: !!this.baseOption ? this.baseOption + '/' : '/',
             collapsable: true,
             children: []
         }];
 
-        const sidebarItems = getSidebarItems(dir);
+        const sidebarItems = getSidebarItems(dir, root);
         const sidebar = Array.from(sidebarRoot.concat(sidebarItems));
 
+        console.log(sidebar);
         return sidebar;
     }
 };
@@ -27,20 +31,42 @@ getRootDir = function () {
     return path.resolve(process.cwd());
 };
 
-getSidebarItems = function (dir) {
+getSidebarItems = function (dir, root) {
     return dir.map((e) => {
-        const childDir = path.resolve(getRootDir(), e);
+        const childDir = path.resolve(root, e);
 
         return sidebaritem = {
             title: e,
-            path: '/' + e + '/',
+            path: !!sidebar.baseOption ? sidebar.baseOption + e + '/' : '/' + e + '/',
             collapsable: true,
             children: [...fs.readdirSync(childDir)
                 .filter(file => !file.includes('.md'))
                 .map(c => '/' + e + '/' + c + '/')]
         };
     })
-
 };
+
+getRoot = function () {
+    tryFindBase();
+    let root;
+
+    if (!!sidebar.baseOption) {
+        root = path.join(getRootDir(), sidebar.baseOption)
+    } else {
+        root = getRootDir()
+    }
+    return root;
+}
+
+tryFindBase = function () {
+    try {
+        let config = path.join(getRootDir(), '/.vuepress/config.js');
+        let contents = fs.readFileSync(config, 'utf8')
+        let base = contents.match(/(?<=base:+\s?").+(?=")/)[0]
+        sidebar.baseOption = base;
+    } catch (err) {
+        console.log("Vuepress-auto-sidebar: Base option not found.")
+    }
+}
 
 module.exports = sidebar;
