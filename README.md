@@ -27,6 +27,22 @@ module.exports = {
         sidebar: sidebar.getSidebar()
     ...
 ```
+
+or with CLI:
+
+config.js
+```
+module.exports = {
+    ...
+    themeConfig: {
+        sidebar: []
+    ...
+```
+Then run:
+```
+cd vp
+vuepress-auto-sidebar
+```
 ![img](https://github.com/nikalsh/vuepress-auto-sidebar/blob/master/images/dir.png?raw=true)
 
 Would result in
@@ -34,10 +50,112 @@ Would result in
 ![demo](https://raw.githubusercontent.com/nikalsh/vuepress-auto-sidebar/master/images/demo.png)
 
 ## Changelog
-### 1.0.5 - 2020-06-07
-### Added
-- Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar. 
+## 1.0.5 - 2020-06-07
+#### Added
+- Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar with sidebar.getSidebar(). 
 
+## 1.0.8 - 2020-06-07
+#### Added
+- CLI Support
+- Rewrites config.js
+
+You can now generate the sidebar with a CLI command, which will rewrite the config.js with the actual sidebar.
+
+This lets you see exactly what is generated as well as letting you further customize it.
+config.js:
+```
+module.exports = {
+    themeConfig: {
+        "sidebar": []
+    }
+}
+```
+
+Run vuepress-auto-sidebar:
+```
+cd vp/path
+vuepress-auto-sidebar
+```
+
+config.js result:
+```
+module.exports = {
+    themeConfig: {
+    "sidebar": [
+        {
+            "title": "Home",
+            "path": "/",
+            "collapsable": true,
+            "children": []
+        },
+        {
+            "title": "ProjectA",
+            "path": "/",
+            "collapsable": true,
+            "children": []
+        },
+        {
+            "title": "ProjectB",
+            "path": "/",
+            "collapsable": true,
+            "children": []
+        }
+    ]
+}
+}
+```
+
+CLI also supports base-option.
+```
+module.exports = {
+    themeConfig: {
+    "base": "/base/path/",
+    "sidebar": []
+    }
+}
+```
+
+Run vuepress-auto-sidebar:
+```
+vuepress-auto-sidebar
+```
+
+config.js result:
+```
+module.exports = {
+    themeConfig: {
+    "base": "/base/path/",
+    "sidebar": [
+        {
+            "title": "Home",
+            "path": "/base/path/",
+            "collapsable": true,
+            "children": []
+        },
+        {
+            "title": "ProjectA",
+            "path": "/base/path/ProjectA/",
+            "collapsable": true,
+            "children": []
+        },
+        {
+            "title": "ProjectB",
+            "path": "/base/path/ProjectB/",
+            "collapsable": true,
+            "children": []
+        }
+    ]
+}
+}
+```
+
+Example scripts:
+```
+"scripts": {
+    "sidebar": cd vp/path && vuepress-auto-sidebar",
+    "dev": "cd vp/path && vuepress-auto-sidebar && vuepress dev"
+}
+```
 
 ## Contact
 If you want to contact me you can reach me at contact@nikals.se
