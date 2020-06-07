@@ -152,7 +152,7 @@ module.exports = {
 Example scripts if you don't install it globally:
 ```javascript
 "scripts": {
-    "sidebar": cd vp/path && vuepress-auto-sidebar",
+    "sidebar": "cd vp/path && vuepress-auto-sidebar",
     "dev": "cd vp/path && vuepress-auto-sidebar && vuepress dev"
 }
 ```
