@@ -3,7 +3,8 @@
 
 vuepress-auto-sidebar is a simple sidebar automating tool for Vuepress.
 
-It looks two parent-folders up from config.js for any folders and will add those and their README.md as sidebar items. 
+It looks for folders with README's in the folder vuepress was run in. 
+If a base-option was supplied in config.js, it will instead look in the specified directory.
 
 
 
@@ -32,11 +33,10 @@ Would result in
 
 ![demo](https://raw.githubusercontent.com/nikalsh/vuepress-auto-sidebar/master/images/demo.png)
 
-
-
-## Todo
-- Allow any name for .md files
-- Allow nested folders deeper than one level
+## Changelog
+### 1.0.5 - 2020-06-07
+### Added
+- Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar. 
 
 ## Contact
 
