@@ -1,10 +1,14 @@
 {
   "name": "vuepress-auto-sidebar",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Simple sidebar automating tool for Vuepress",
   "main": "index.js",
   "scripts": {
+    "start": "node test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "vuepress-auto-sidebar": "./cli.js"
   },
   "author": {
     "name": "Niklas Helander",

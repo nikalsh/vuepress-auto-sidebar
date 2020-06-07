@@ -38,8 +38,8 @@ Would result in
 ### Added
 - Support for "base"-option in config.js, it will now prepend the base to all paths when generating the sidebar. 
 
-## Contact
 
+## Contact
 If you want to contact me you can reach me at contact@nikals.se
 
 ## License
