@@ -51,6 +51,12 @@ Would result in
 
 ## Changelog
 
+
+## v1.1.0 - 2020-06-20
+#### Bug fix
+- Correctly identify base-option (key can be base or "base") when using sidebar.getSidebar()
+- Ignore all non-directories when scanning root docs folder with both sidebar.getSidebar() and CLI. 
+
 ## v1.0.8 - 2020-06-07
 #### Added
 - CLI Support

@@ -1,16 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const sidebar = {
 
     baseOption: undefined,
 
     getSidebar(HomeTitle = "Home") {
 
+        console.log("HELLO XD")
         const root = getRoot();
 
-        const dir = fs.readdirSync(root)
-            .filter(file => file !== '.vuepress' && !file.includes('.md'));
+        const dir =
+            fs.readdirSync(root)
+                .filter(file => {
+                    console.log(file)
+                    console.log(path.join(root, file))
+                    return file !== '.vuepress' && fs.statSync(path.join(root, file)).isDirectory()
+                });
 
         const sidebarRoot = [{
             title: HomeTitle,
@@ -26,6 +33,7 @@ const sidebar = {
         return sidebar;
     }
 };
+
 
 getRootDir = function () {
     return path.resolve(process.cwd());
@@ -62,8 +70,10 @@ tryFindBase = function () {
     try {
         let config = path.join(getRootDir(), '/.vuepress/config.js');
         let contents = fs.readFileSync(config, 'utf8')
-        let base = contents.match(/(?<=base:+\s?").+(?=")/)[0]
+        console.log(contents    )
+        let base = contents.match(/(?<="?base"?:+\s?").+(?=")/)[0]
         sidebar.baseOption = base;
+        console.log("BASE!!: ", base)
     } catch (err) {
         console.log("Vuepress-auto-sidebar: Base option not found.")
     }

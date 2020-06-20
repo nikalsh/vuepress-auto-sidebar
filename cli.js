@@ -10,7 +10,7 @@ let baseOption = undefined;
     const root = getRoot();
 
     const dir = fs.readdirSync(root)
-        .filter(file => file !== '.vuepress' && !file.includes('.md'));
+        .filter(file => file !== '.vuepress' && fs.statSync(path.join(root, file)).isDirectory());
 
     const sidebarRoot = [{
         title: HomeTitle,
