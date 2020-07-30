@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 
-
 let baseOption = undefined;
 
 (function getSidebar(HomeTitle = "Home") {
@@ -41,7 +40,6 @@ function getRootDir() {
 };
 
 function getSidebarItems(dir, root) {
-    console.log(dir)
     return dir.map((e) => {
         const childDir = path.resolve(root, e);
 
