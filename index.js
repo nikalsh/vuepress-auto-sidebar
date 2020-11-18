@@ -28,8 +28,9 @@ const sidebar = {
 };
 
 
-getRootDir = function () {
-    return path.resolve(process.cwd());
+getRootDir = function () { 
+    const extraPath = (process.argv.length > 3) ? `/${process.argv[3]}` : '';
+    return path.resolve(process.cwd() + extraPath);
 };
 
 getSidebarItems = function (dir, root) {
